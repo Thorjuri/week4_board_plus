@@ -1,4 +1,8 @@
 # week3_board
+
+<h5>수정중! 비공개</h5>
+
+<!--
 22.10.01
 1. schemas에 unique 해제 및 mongodb의 인덱스 삭제. Mongo Server Error: E11000 duplicate key error 오류 해결
 2. 모든 기능 정상 구동 확인 완료. 
@@ -12,3 +16,4 @@
 5. 즉, 내 mongodb 아틀라스 연결해서 index 삭제 작업을 최초 한 번만 진행해주면, 그 이후로는 local27017 연경 후 studio 3T 써도 인덱스 문제 발생하지 않는 것 같음. 
 6. 어쨋든 db 주소 변경하고, git push 후 깃헙 public으로 변경함. 
 7. 이제 ubuntu에 git clone 하고 서버 실행해 볼 예정 
+-->
