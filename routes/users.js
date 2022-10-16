@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
-// const commentRouter = require('./comment.js');
 const jwt = require("jsonwebtoken");
 const { Op } = require("sequelize");
 const { User2, Post, Comment, Likes } = require("../models");
 const authMiddleware = require("../middlewares/auth_middleware");
 const user_validation = require('../validation/user_validation')
-// const likes = require('../models/likes.js');
 
 
 // 1.회원가입 (Joi validation)

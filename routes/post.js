@@ -1,13 +1,9 @@
 const express = require('express');
 const router = express.Router();
-// const commentRouter = require('./comment.js');
 const jwt = require("jsonwebtoken");
 const { User2, Post, Comment, Likes } = require("../models");
 const authMiddleware = require("../middlewares/auth_middleware");
-// const likes = require('../models/likes.js');
 
-// router.use("/:postId/comment", [commentRouter]);
-// router.use("/comment", [commentRouter]);
 
 
 // 게시글 목록 전체 불러오기 

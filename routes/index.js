@@ -8,8 +8,8 @@ const { User2, Post, Comment, Likes } = require("../models");
 const authMiddleware = require("../middlewares/auth_middleware");
 const likes = require('../models/likes.js');
 
+//전역 미들웨어
 
-// post.js 로 이동
 router.use("/post", postRouter);
 router.use("/users", usersRouter);
 router.use("/comment", commentRouter);
@@ -18,5 +18,4 @@ router.use("/comment", commentRouter);
 
 
 
-//라우트해서 도착할 페이지에 필요
-module.exports = router;
+module.exports = router; 
