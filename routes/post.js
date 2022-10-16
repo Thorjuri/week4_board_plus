@@ -52,7 +52,10 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
                 }
             });
             res.send("좋아요 +1 반영되었습니다.")
+<<<<<<< HEAD
+=======
             // return;
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
         } else {
             await Likes.update({
                 like: 0
@@ -63,7 +66,10 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
                 }
             })
             res.send("좋아요 취소 되었습니다.")
+<<<<<<< HEAD
+=======
             // return;
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
             }
         }
 
@@ -82,6 +88,9 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
                  like: 1
         }
     });
+<<<<<<< HEAD
+    const sumLikes = totalLikes.length;
+=======
     console.log(totalLikes)
     // .filter((post)=> {return post.likes})
     // let sumLikes = 0;
@@ -90,6 +99,7 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
     // }
     const sumLikes = totalLikes.length;
     console.log(sumLikes)
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     await Post.update({
         likes: sumLikes
     },{
@@ -100,6 +110,8 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
 
 
 
+<<<<<<< HEAD
+=======
     // const targetPost = await Likes.findAll({
     //     where: {
     //         postId: postId,
@@ -181,6 +193,7 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
 // });
 
 
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
 
 
 

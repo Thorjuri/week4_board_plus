@@ -16,18 +16,27 @@ app.use("/board", [boardRouter]);
 
 
 // 1.회원가입 (Joi validation)
+<<<<<<< HEAD
+app.post('/users', user_validation.user_singup, async (req, res) => {
+=======
 //해당 경로로 들어오면, user_validation 파일의 user_singup함수를 거쳤다가 돌아옴
 //왜냐하면 user_singup함수에 next()를 심어놨기 때문!!
 //next()를 통해서 다시 여기(app.js)로 돌아와서 나머지 async(req,res)=> 함수 마저 실행.
 app.post('/users', user_validation.user_singup, async (req, res) => {
     //헤더에 토큰 갖고 접근 시, '이미 로그인되어있습니다'에러
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     const { authorization } = req.headers;
     const [authType, authToken] = (authorization || "").split(" ");
     if(authToken){
         res.status(400).send("이미 로그인 되어있습니다.");
         return;
+<<<<<<< HEAD
+    };
+
+=======
     }
     //회원가입 과정 시작
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     const { userId, nickname, email, password, confirmPassword } = req.body;
     const existUsers = await User2.findAll({
         where: {
@@ -65,7 +74,11 @@ app.post('/users', user_validation.user_singup, async (req, res) => {
     if(authToken){
         res.status(400).send("이미 로그인 되어있습니다.");
         return;
+<<<<<<< HEAD
+    };
+=======
     }
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     //로그인 과정 시작
     const { userId, password } = req.body;
     const user = await User2.findOne({ where: { userId, password } });
@@ -75,7 +88,11 @@ app.post('/users', user_validation.user_singup, async (req, res) => {
         errorMessage: "아이디 또는 패스워드가 잘못됐습니다.",
       });
       return;
+<<<<<<< HEAD
+    };
+=======
     }
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
   
     const token = jwt.sign({ userId: user.userId }, "access-secret-key");
     res.send({
@@ -94,7 +111,11 @@ app.post('/users', user_validation.user_singup, async (req, res) => {
             nickname: nickname,
             like: 1
         }
+<<<<<<< HEAD
+    });
+=======
     })
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     let post;
     let likePosts = []
     for(let like of likes){
@@ -102,14 +123,24 @@ app.post('/users', user_validation.user_singup, async (req, res) => {
             where: {
                 postId:like.postId
             }
+<<<<<<< HEAD
+        });
+        likePosts.push(post[0])
+    };
+=======
         })
         likePosts.push(post[0])
     }
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     const postSort = likePosts.sort((a,b) => {
         if(a.likes > b.likes) return -1;
         if(a.likes < b.likes) return 1;
         return 0;
+<<<<<<< HEAD
+    });
+=======
     })
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     res.send({ postSort });
   });
   
