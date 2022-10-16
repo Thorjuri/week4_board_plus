@@ -3,9 +3,9 @@ const { User2, Post, Comment } = require("../models");
 
 // 미들웨어 - 사용자인증 (sequelize 변경)
 module.exports = (req, res, next) => {
-    const { authorization } = req.headers;
+    const {authorization}  = req.headers;
     const [authType, authToken] = (authorization || "").split(" ");
-
+    
     //thunder Client로 사용자인증 미들웨어 테스트 할때만 body로 토큰보내기
     // const { authType, authToken } = req.body;
 

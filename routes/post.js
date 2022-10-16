@@ -52,10 +52,6 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
                 }
             });
             res.send("좋아요 +1 반영되었습니다.")
-<<<<<<< HEAD
-=======
-            // return;
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
         } else {
             await Likes.update({
                 like: 0
@@ -66,10 +62,6 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
                 }
             })
             res.send("좋아요 취소 되었습니다.")
-<<<<<<< HEAD
-=======
-            // return;
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
             }
         }
 
@@ -88,114 +80,13 @@ router.put('/:postId/like', authMiddleware, async(req,res) => {
                  like: 1
         }
     });
-<<<<<<< HEAD
     const sumLikes = totalLikes.length;
-=======
-    console.log(totalLikes)
-    // .filter((post)=> {return post.likes})
-    // let sumLikes = 0;
-    // for(let totalLike of totalLikes){
-    //     sumLikes = sumLikes + totalLike
-    // }
-    const sumLikes = totalLikes.length;
-    console.log(sumLikes)
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     await Post.update({
         likes: sumLikes
     },{
         where: {postId: postId}
     })
 });
-
-
-
-
-<<<<<<< HEAD
-=======
-    // const targetPost = await Likes.findAll({
-    //     where: {
-    //         postId: postId,
-    //         nickname:nickname
-    //     }
-    // })
-    // const targetLike = targetPost.filter((data)=> {return data.like})
-    // // const targetPost = await Post.findOne({
-    // //     where: {
-    // //         postId:postId,
-    // //     }
-    // // });
-
-    // // if(!targetPost){
-    // //     res.status(400).send({
-    // //         errorMessage: "해당 게시글이 존재하지 않습니다."
-    // //     })
-    // //     return;
-    // // }
-
-    // try{    
-    //     if(!targetPost){
-    //         await Likes.update({
-    //             nickname: nickname,
-    //             like: 1
-    //         },{
-    //             where: {postId: postId}
-    //         })
-    //         res.send("좋아요 +1  반영되었습니다.")
-    //     } else if(targetLike[0] === 1){
-    //         await Likes.update({
-    //             like: 0
-    //         },
-    //         {
-    //             where: { 
-    //                 postId: postId,
-    //                 nickname: nickname
-    //             }
-    //         })
-    //         res.send("좋아요 취소되었습니다.")
-    //     } else {
-    //         await Likes.update({
-    //             like: 1
-    //     },{
-    //         where : {
-    //             postId: postId,
-    //             nickname: nickname
-    //         }
-    //     })
-    //     res.send( "좋아요 +1 반영되었습니다.");
-    //     }
-    // } catch (error) {
-    //     res.status(400).json({ code: 400, message: error.message });
-    // };
-
-
-    // try {
-    //     let existLikes =0;
-    //     if(!targetPost.likes){
-    //         existLikes = 1;
-    //     }else{
-    //         existLikes = Number(targetPost.likes) + 1;
-    //     }
-    
-    //     await Post.update({
-    //         likes: existLikes,
-    //         likeUser:  d
-    //     },
-    //     {
-    //         where: { 
-    //             postId : postId 
-    //         }
-    //     })
-              
-    //     res.send( "좋아요 +1 반영되었습니다.");
-    // } catch(error) {
-    //     res.status(400).json({ code: 400, message: error.message })
-    // }
-// });
-
-
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
-
-
 
 
 

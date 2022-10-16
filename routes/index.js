@@ -14,12 +14,6 @@ router.use("/post", [postRouter]);
 // 게시글 목록 전체 불러오기 
 router.get('/list', async(req, res) => {   
     const posts = await Post.findAll({});
-<<<<<<< HEAD
-=======
-    // const likes = await Likes.findAll({
-    //     where
-    // })
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
 
     if(posts.length < 1){
         res.status(400).send({
@@ -71,12 +65,6 @@ router.post('/write', authMiddleware, async(req,res)=>{
     await Likes.create({
         postId: existsPost
     })
-<<<<<<< HEAD
-=======
-    // await Like.create({
-    //     postId:existsPost
-    // })
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
     res.send("게시글이 저장되었습니다.");
 } catch (error) {
     res.status(400).send({

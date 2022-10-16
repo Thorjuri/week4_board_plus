@@ -16,15 +16,9 @@ app.use("/board", [boardRouter]);
 
 
 // 1.회원가입 (Joi validation)
-
-app.post('/users', user_validation.user_singup, async (req, res) => {
-
-//해당 경로로 들어오면, user_validation 파일의 user_singup함수를 거쳤다가 돌아옴
-//왜냐하면 user_singup함수에 next()를 심어놨기 때문!!
-//next()를 통해서 다시 여기(app.js)로 돌아와서 나머지 async(req,res)=> 함수 마저 실행.
 app.post('/users', user_validation.user_singup, async (req, res) => {
     //헤더에 토큰 갖고 접근 시, '이미 로그인되어있습니다'에러
->>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
+
     const { authorization } = req.headers;
     const [authType, authToken] = (authorization || "").split(" ");
     if(authToken){
@@ -128,4 +122,3 @@ app.get('/', (req,res)=> {
 app.listen(port, () => {
     console.log(port, '포트로 서버가 열렸어요!');
   });
-
