@@ -2,7 +2,10 @@
 const {
   Model
 } = require('sequelize');
+<<<<<<< HEAD
 // const db = require('.');
+=======
+>>>>>>> 6f0726616573dad4c0b731b9cc390bd278830e04
 module.exports = (sequelize, DataTypes) => {
   class Likes extends Model {
     /**
