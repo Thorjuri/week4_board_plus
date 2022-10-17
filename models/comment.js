@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     cmtId: DataTypes.INTEGER,
     cmtContent: DataTypes.STRING,
     cmtName: DataTypes.STRING,
-    cmtDate: DataTypes.STRING
+    // cmtDate: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Comment',

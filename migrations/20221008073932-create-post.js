@@ -16,7 +16,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       likeUser: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: true
       },
       postId: {
         type: Sequelize.INTEGER
@@ -31,7 +32,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       postDate: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       password: {
         type: Sequelize.STRING

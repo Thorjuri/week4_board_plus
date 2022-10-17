@@ -22,7 +22,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       cmtDate: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
