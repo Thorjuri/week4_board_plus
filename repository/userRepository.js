@@ -55,7 +55,7 @@ class UserRepository {
         };
         return {data : likePosts, user: userInfo};
     };
-};
+};  
   
 
 
