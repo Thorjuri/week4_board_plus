@@ -1,23 +1,27 @@
-{
-  "development": {
-    "username": "Thorjuri",
-    "password": "thor113355",
+require('dotenv').config();
+ 
+ 
+const development = {
+    "username": process.env.DB_USERNAME,
+    "password": process.env.DB_PASSWORD,
     "database": "database_development",
-    "host": "express-database.clomaeu0jnth.ap-northeast-2.rds.amazonaws.com",
+    "host": process.env.DB_ENDPOINT,
     "dialect": "mysql"
-  },
-  "test": {
+  };
+const test = {
     "username": "root",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
-  },
-  "production": {
+  };
+const production = {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-}
+
+
+module.exports = {development, test, production};
