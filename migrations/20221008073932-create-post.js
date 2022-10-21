@@ -15,10 +15,10 @@ module.exports = {
       likes: {
         type: Sequelize.INTEGER
       },
-      likeUser: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
+      // likeUser: {
+      //   type: Sequelize.STRING,
+      //   allowNull: true
+      // },
       postId: {
         type: Sequelize.INTEGER
       },
