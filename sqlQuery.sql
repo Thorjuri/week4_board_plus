@@ -1,1 +1,5 @@
-SHOW DATABASE * database_development
+-- SHOW DATABASE * database_development
+-- DROP DATABASE prac_nodejs
+-- DROP DATABASE layered_architecture_pattern_db
+-- DROP DATABASE week5_prac_shop
+-- DROP DATABASE week5_homework

@@ -35,9 +35,14 @@ class PostRepository {
 
     createPost = async(nickname, title, postContent, password)=> {
             const posts = await Post.findAll({});
-            const postId = posts.map((post)=>{return post.postId});
-            const postIdMax = Math.max(...postId)
-            const newPostId = postIdMax + 1
+            let newPostId;
+            if(posts.length ===0){
+                newPostId = 1
+            }else{
+                const postId = posts.map((post)=>{return post.postId});
+                const postIdMax = Math.max(...postId)
+                newPostId = postIdMax + 1
+            }
 
             try{
                 const createPostData = await Post.create({ postId:newPostId, title, postContent, postName:nickname, password });
